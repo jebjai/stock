@@ -32,10 +32,10 @@
 	<script src="assests/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<body style="padding-top: 70px;">
 
 
-	<nav class="navbar navbar-default navbar-static-top">
+	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -53,13 +53,13 @@
 
       <ul class="nav navbar-nav navbar-right">        
 
-      	<li id="navDashboard"><a href="index.php"><i class="glyphicon glyphicon-list-alt"></i>  Dashboard</a></li>        
+      	<li id="navDashboard"><a href="index.php"><i class="glyphicon glyphicon-home"></i>  Home</a></li>        
         
-        <li id="navBrand"><a href="brand.php"><i class="glyphicon glyphicon-btc"></i>  Brand</a></li>        
+        <li id="navBrand"><a href="brand.php"><i class="glyphicon glyphicon-map-marker"></i>  Location</a></li>        
 
         <li id="navCategories"><a href="categories.php"> <i class="glyphicon glyphicon-th-list"></i> Category</a></li>        
 
-        <li id="navProduct"><a href="product.php"> <i class="glyphicon glyphicon-ruble"></i> Product </a></li>     
+        <li id="navProduct"><a href="product.php"> <i class="glyphicon glyphicon-cutlery"></i> Product </a></li>     
 
         <li class="dropdown" id="navOrder">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-shopping-cart"></i> Orders <span class="caret"></span></a>

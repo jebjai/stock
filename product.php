@@ -26,9 +26,9 @@
 						<tr>
 							<th style="width:10%;">Photo</th>							
 							<th>Product Name</th>
-							<th>Rate</th>							
+<!--							<th>Rate</th>							-->
 							<th>Quantity</th>
-							<th>Brand</th>
+							<th>Location</th>
 							<th>Category</th>
 							<th>Status</th>
 							<th style="width:15%;">Options</th>
@@ -87,16 +87,19 @@
 				    </div>
 	        </div> <!-- /form-group-->	        	 
 
+<!--
 	        <div class="form-group">
 	        	<label for="rate" class="col-sm-3 control-label">Rate: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <input type="text" class="form-control" id="rate" placeholder="Rate" name="rate" autocomplete="off">
 				    </div>
-	        </div> <!-- /form-group-->	     	        
+	        </div> 
+-->
+	        <!-- /form-group-->	     	        
 
 	        <div class="form-group">
-	        	<label for="brandName" class="col-sm-3 control-label">Brand Name: </label>
+	        	<label for="brandName" class="col-sm-3 control-label">Location Name: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <select class="form-control" id="brandName" name="brandName">
@@ -245,16 +248,19 @@
 						    </div>
 			        </div> <!-- /form-group-->	        	 
 
+<!--
 			        <div class="form-group">
 			        	<label for="editRate" class="col-sm-3 control-label">Rate: </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
 						      <input type="text" class="form-control" id="editRate" placeholder="Rate" name="editRate" autocomplete="off">
 						    </div>
-			        </div> <!-- /form-group-->	     	        
+			        </div> 
+-->
+			        <!-- /form-group-->	     	        
 
 			        <div class="form-group">
-			        	<label for="editBrandName" class="col-sm-3 control-label">Brand Name: </label>
+			        	<label for="editBrandName" class="col-sm-3 control-label">Location Name: </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
 						      <select class="form-control" id="editBrandName" name="editBrandName">

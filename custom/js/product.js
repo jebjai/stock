@@ -43,7 +43,7 @@ $(document).ready(function() {
 			var productImage = $("#productImage").val();
 			var productName = $("#productName").val();
 			var quantity = $("#quantity").val();
-			var rate = $("#rate").val();
+			//var rate = $("#rate").val();
 			var brandName = $("#brandName").val();
 			var categoryName = $("#categoryName").val();
 			var productStatus = $("#productStatus").val();
@@ -78,15 +78,15 @@ $(document).ready(function() {
 				$("#quantity").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
-			if(rate == "") {
-				$("#rate").after('<p class="text-danger">Rate field is required</p>');
-				$('#rate').closest('.form-group').addClass('has-error');
-			}	else {
-				// remov error text field
-				$("#rate").find('.text-danger').remove();
-				// success out for form 
-				$("#rate").closest('.form-group').addClass('has-success');	  	
-			}	// /else
+//			if(rate == "") {
+//				$("#rate").after('<p class="text-danger">Rate field is required</p>');
+//				$('#rate').closest('.form-group').addClass('has-error');
+//			}	else {
+//				// remov error text field
+//				$("#rate").find('.text-danger').remove();
+//				// success out for form 
+//				$("#rate").closest('.form-group').addClass('has-success');	  	
+//			}	// /else
 
 			if(brandName == "") {
 				$("#brandName").after('<p class="text-danger">Brand Name field is required</p>');
@@ -118,7 +118,8 @@ $(document).ready(function() {
 				$("#productStatus").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
-			if(productImage && productName && quantity && rate && brandName && categoryName && productStatus) {
+			//if(productImage && productName && quantity && rate && brandName && categoryName && productStatus) {
+			if(productImage && productName && quantity && brandName && categoryName && productStatus) {
 				// submit loading button
 				$("#createProductBtn").button('loading');
 
@@ -236,7 +237,7 @@ function editProduct(productId = null) {
 				// quantity
 				$("#editQuantity").val(response.quantity);
 				// rate
-				$("#editRate").val(response.rate);
+				//$("#editRate").val(response.rate);
 				// brand name
 				$("#editBrandName").val(response.brand_id);
 				// category name
@@ -251,7 +252,7 @@ function editProduct(productId = null) {
 					var productImage = $("#editProductImage").val();
 					var productName = $("#editProductName").val();
 					var quantity = $("#editQuantity").val();
-					var rate = $("#editRate").val();
+					//var rate = $("#editRate").val();
 					var brandName = $("#editBrandName").val();
 					var categoryName = $("#editCategoryName").val();
 					var productStatus = $("#editProductStatus").val();
@@ -277,15 +278,15 @@ function editProduct(productId = null) {
 						$("#editQuantity").closest('.form-group').addClass('has-success');	  	
 					}	// /else
 
-					if(rate == "") {
-						$("#editRate").after('<p class="text-danger">Rate field is required</p>');
-						$('#editRate').closest('.form-group').addClass('has-error');
-					}	else {
-						// remov error text field
-						$("#editRate").find('.text-danger').remove();
-						// success out for form 
-						$("#editRate").closest('.form-group').addClass('has-success');	  	
-					}	// /else
+//					if(rate == "") {
+//						$("#editRate").after('<p class="text-danger">Rate field is required</p>');
+//						$('#editRate').closest('.form-group').addClass('has-error');
+//					}	else {
+//						// remov error text field
+//						$("#editRate").find('.text-danger').remove();
+//						// success out for form 
+//						$("#editRate").closest('.form-group').addClass('has-success');	  	
+//					}	// /else
 
 					if(brandName == "") {
 						$("#editBrandName").after('<p class="text-danger">Brand Name field is required</p>');
@@ -317,7 +318,8 @@ function editProduct(productId = null) {
 						$("#editProductStatus").closest('.form-group').addClass('has-success');	  	
 					}	// /else					
 
-					if(productName && quantity && rate && brandName && categoryName && productStatus) {
+//					if(productName && quantity && rate && brandName && categoryName && productStatus) {
+					if(productName && quantity && brandName && categoryName && productStatus) {
 						// submit loading button
 						$("#editProductBtn").button('loading');
 

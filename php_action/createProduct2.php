@@ -3,7 +3,7 @@
 require_once 'core.php';
 
 $valid['success'] = array('success' => false, 'messages' => array());
-
+echo '123';
 if($_POST) {	
 
 	$productName 		= $_POST['productName'];
@@ -23,7 +23,7 @@ if($_POST) {
 				
 //				$sql = "INSERT INTO product (product_name, product_image, brand_id, categories_id, quantity, rate, active, status) 
 //				VALUES ('$productName', '$url', '$brandName', '$categoryName', '$quantity', '$rate', '$productStatus', 1)";
-                $sql = "INSERT INTO product (product_name, product_image, brand_id, categories_id, quantity,active, status) 
+                $sql = "INSERT INTO product (product_name, product_image, brand_id, categories_id, quantity, active, status) 
 				VALUES ('$productName', '$url', '$brandName', '$categoryName', '$quantity', '$productStatus', 1)";
 
 				if($connect->query($sql) === TRUE) {
