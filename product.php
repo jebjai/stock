@@ -21,7 +21,7 @@
 					<button class="btn btn-default button1" data-toggle="modal" id="addProductModalBtn" data-target="#addProductModal"> <i class="glyphicon glyphicon-plus-sign"></i> Add Product </button>
 				</div> <!-- /div-action -->				
 				
-				<table class="table" id="manageProductTable">
+				<table class="table row-border order-column hover" id="manageProductTable">
 					<thead>
 						<tr>
 							<th style="width:10%;">Photo</th>							

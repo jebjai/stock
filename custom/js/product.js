@@ -6,7 +6,8 @@ $(document).ready(function() {
 	// manage product data table
 	manageProductTable = $('#manageProductTable').DataTable({
 		'ajax': 'php_action/fetchProduct.php',
-		'order': []
+		'order': [],
+      responsive: true
 	});
 
 	// add product modal btn clicked
