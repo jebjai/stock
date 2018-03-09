@@ -1,6 +1,6 @@
 <?php 
-
-require_once 'php_action/core.php';
+session_start();
+//require_once 'php_action/core.php';
 
 // remove all session variables
 session_unset(); 

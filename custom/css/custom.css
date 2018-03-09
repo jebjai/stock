@@ -10,6 +10,7 @@ div.card {
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
+  
 }
 
 
@@ -24,6 +25,83 @@ div.cardContainer {
     padding: 10px;
 }
 
+.cardDp {
+/*  width: 100%;*/
+  box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+   background-color: #2268ed;
+  margin-bottom: 20px;
+
+}
+.img1 {
+/*  float: left;*/
+  position:absolute;
+  width: 100px;
+  
+/*  top: -50px;*/
+/*  background-color: #FCAF50;*/
+/*  height: 100px;*/
+/* background-size: 100px 100px;*/
+  z-index: 1000;
+  border-radius: 50%;
+/*  bottom: 1%;*/
+}
+
+div.cardDpHeader {
+/*
+  display: block;
+  position:static;
+*/
+  
+/*    background-color: #4CAF50;*/
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+  height: 100%;
+}
+div.cardDpHeaderImage {
+  
+/*    background-color: #4CAF50;*/
+    color: white;
+    padding: 10px;
+/*  width: 50%;*/
+/*    font-size: 40px;*/
+/*    height: 100%;*/
+/*  display: block;*/
+  position: relative;
+
+}
+.imgCircle {
+  position:absolute;
+  width: 100px;
+/*  height: 100px;*/
+/*  display: block;*/
+  top: 20px;
+/*  background-color: #FCAF50;*/
+/*  height: 100px;*/
+/* background-size: 100px 100px;*/
+  z-index: 1000;
+  border-radius: 50%;
+/*display:inline-block;*/
+  display: block;
+    margin: 0 auto;
+ 
+}
+
+div.cardDpHeaderQuantity {
+/*    background-color: #4CAF50;*/
+    color:#fff145;
+    padding: 10px;
+    font-size: 40px;
+/*  text-align: right ; */
+}
+
+div.cardDpContainer {
+    padding: 10px;
+    text-align: center;
+/*  width: auto;*/
+  background-color: #ffffff;
+}
 
 .div-hide {
 	display: none;
@@ -41,4 +119,21 @@ div.kv-avatar div.file-input div.file-preview {
 .vertical {
 	padding-top: 150px;
 	padding-bottom: 150px;
+}
+.lowPadding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.noPadding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.noPaddingLeft {
+  padding-left: 0px;
+/*  padding-right: 0px;*/
+}
+.noPaddingRight {
+/*  padding-left: 0px;*/
+  
+  padding-right: 0px;
 }

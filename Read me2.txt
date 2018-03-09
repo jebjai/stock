@@ -1,0 +1,7 @@
+localhost 127.0.0.1 -> www.wechefthailand.com
+index
+dashboard
+updatedp
+db
+core
+coredp

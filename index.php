@@ -35,11 +35,17 @@ if($_POST) {
 			if($mainResult->num_rows == 1) {
 				$value = $mainResult->fetch_assoc();
 				$user_id = $value['user_id'];
+//				$username1 = $value['username'];
+                $role = $value['role'];
 				$location = $value['location'];
+                $vender = $value['vender'];
 
 				// set session
 				$_SESSION['userId'] = $user_id;
+				$_SESSION['username1'] = $username;
+				$_SESSION['role'] = $role;
 				$_SESSION['location'] = $location;
+				$_SESSION['vender'] = $vender;
 
 				header('location: http://localhost/stock/dashboard.php');	
 			} else{

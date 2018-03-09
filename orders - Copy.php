@@ -69,30 +69,16 @@ if($_GET['o'] == 'add') {
 			      <input type="text" class="form-control" id="orderDate" name="orderDate" autocomplete="off" />
 			    </div>
 			  </div> <!--/form-group-->
-			  <div class="form-group"> <!--Client Name-->
-        
-                <select class="form-control" name="venderName[]" id="venderName<?php echo $x; ?>" onchange="getProductData(<?php echo $x; ?>)" >
-                    <option value="">~~SELECT~~</option>
-                    <?php
-                        $productSql = "SELECT * FROM product WHERE active = 1 AND status = 1 AND quantity != 0";
-                        $productData = $connect->query($productSql);
-
-                        while($row = $productData->fetch_array()) {									 		
-                            echo "<option value='".$row['product_id']."' id='changeProduct".$row['product_id']."'>".$row['product_name']."</option>";
-                            } // /while 
-
-                    ?>
-                </select>
-        
-			    <label for="clientName" class="col-sm-2 control-label">Vender Name</label>
+			  <div class="form-group">
+			    <label for="clientName" class="col-sm-2 control-label">Client Name</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="venderName" name="venderName" placeholder="Vender Name" autocomplete="off" />
+			      <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Client Name" autocomplete="off" />
 			    </div>
 			  </div> <!--/form-group-->
-			  <div class="form-group"> <!--Client Contact-->
-			    <label for="clientContact" class="col-sm-2 control-label">To Droppoint</label>
+			  <div class="form-group">
+			    <label for="clientContact" class="col-sm-2 control-label">Client Contact</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="toDroppoint" name="toDroppoint" placeholder="To Droppoint" autocomplete="off" />
+			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" autocomplete="off" />
 			    </div>
 			  </div> <!--/form-group-->			  
 

@@ -75,11 +75,13 @@
 
           <li id="navDashboard"><a href="index.php"><i class="glyphicon glyphicon-home"></i>  Home</a></li>
 
-          <li id="navBrand"><a href="brand.php"><i class="glyphicon glyphicon-map-marker"></i>  Location</a></li>
+          <li id="navBrand"><a href="brand.php"><i class="glyphicon glyphicon-flash"></i>  Vender</a></li>
 
           <li id="navCategories"><a href="categories.php"> <i class="glyphicon glyphicon-th-list"></i> Category</a></li>
 
           <li id="navProduct"><a href="product.php"> <i class="glyphicon glyphicon-cutlery"></i> Product </a></li>
+          <li id="navDroppoint"><a href="droppoint.php"> <i class="glyphicon glyphicon-map-marker"></i> Droppoint </a></li>
+          <li id="navStock"><a href="stock.php"> <i class="glyphicon glyphicon-asterisk"></i> Stock </a></li>
 
           <li class="dropdown" id="navOrder">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-shopping-cart"></i> Orders <span class="caret"></span></a>

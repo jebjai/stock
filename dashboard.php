@@ -34,7 +34,6 @@ $connect->close();
     <link rel="stylesheet" href="assests/plugins/fullcalendar/fullcalendar.min.css">
     <link rel="stylesheet" href="assests/plugins/fullcalendar/fullcalendar.print.css" media="print">
 
-
 <div class="row">
 	
 	<div class="col-md-4">
@@ -86,6 +85,7 @@ $connect->close();
 		</div> 
 		<br/>
 
+<!--
 		<div class="card">
 		  <div class="cardHeader" style="background-color:#245580;">
 		    <h1><?php if($totalRevenue) {
@@ -99,9 +99,11 @@ $connect->close();
 		    <p> <i class="glyphicon glyphicon-usd"></i> Total Revenue</p>
 		  </div>
 		</div> 
+-->
 
 	</div>
 
+<!--
 	<div class="col-md-8">
 		<div class="panel panel-default">
 			<div class="panel-heading"> <i class="glyphicon glyphicon-calendar"></i> Calendar</div>
@@ -111,6 +113,7 @@ $connect->close();
 		</div>
 		
 	</div>
+-->
 
 	
 </div> <!--/row-->
