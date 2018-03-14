@@ -74,7 +74,8 @@ if($_GET['o'] == 'add') {
 
 			    <label for="clientName" class="col-sm-2 control-label">Vender Name</label>
 			    <div class="col-sm-10">
-			      <select class="form-control" id="BrandName" name="BrandName" onchange="fetchSelectProduct(this.value);">
+<!--			      <select class="form-control" id="BrandName" name="BrandName" onchange="fetchSelectProduct(this.value);">-->
+			      <select class="form-control" id="BrandName" name="BrandName" onchange="selectProduct(this.value,DroppointName.value);">
                     <option value="">~~SELECT~~</option>
                     <?php 
                     $sql = "SELECT brand_id, brand_name, brand_active, brand_status FROM brands WHERE brand_status = 1 AND brand_active = 1";
@@ -89,7 +90,7 @@ if($_GET['o'] == 'add') {
 			    </div>
 			  </div> <!--/form-group-->
 			  <div class="form-group"> <!--Client Contact-->
-			    <label for="clientContact" class="col-sm-2 control-label">To Droppoint</label>
+			    <label for="DroppointName" class="col-sm-2 control-label">To Droppoint</label>
 			    <div class="col-sm-10">
 			      <select class="form-control" id="DroppointName" name="DroppointName">
 			      <option value="">~~SELECT~~</option>
@@ -120,7 +121,7 @@ if($_GET['o'] == 'add') {
 			  	<tbody>
 			  		<?php
 			  		$arrayNumber = 0;
-			  		for($x = 1; $x < 4; $x++) { ?>
+			  		for($x = 1; $x < 5; $x++) { ?>
 			  			<tr id="row<?php echo $x; ?>" class="<?php echo $arrayNumber; ?>">			  				
 			  				<td style="margin-left:20px;">
 			  					<div class="form-group">
