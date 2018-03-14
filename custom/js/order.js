@@ -803,3 +803,19 @@ function paymentOrder(orderId = null) {
 		alert('Error ! Refresh the page again');
 	}
 }
+
+function fetchSelectProduct(val)
+{
+ $.ajax({
+ type: 'post',
+ url: 'php_action/fetchProductVender.php',
+ data: {
+  get_option:val
+ },
+ success: function (response) {
+  document.getElementById("productName1").innerHTML=response; 
+  document.getElementById("productName2").innerHTML=response; 
+  document.getElementById("productName3").innerHTML=response; 
+ }
+ });
+}

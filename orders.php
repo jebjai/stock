@@ -71,38 +71,49 @@ if($_GET['o'] == 'add') {
 			  </div> <!--/form-group-->
 			  <div class="form-group"> <!--Client Name-->
         
-                <select class="form-control" name="venderName[]" id="venderName<?php echo $x; ?>" onchange="getProductData(<?php echo $x; ?>)" >
-                    <option value="">~~SELECT~~</option>
-                    <?php
-                        $productSql = "SELECT * FROM product WHERE active = 1 AND status = 1 AND quantity != 0";
-                        $productData = $connect->query($productSql);
 
-                        while($row = $productData->fetch_array()) {									 		
-                            echo "<option value='".$row['product_id']."' id='changeProduct".$row['product_id']."'>".$row['product_name']."</option>";
-                            } // /while 
-
-                    ?>
-                </select>
-        
 			    <label for="clientName" class="col-sm-2 control-label">Vender Name</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="venderName" name="venderName" placeholder="Vender Name" autocomplete="off" />
+			      <select class="form-control" id="BrandName" name="BrandName" onchange="fetchSelectProduct(this.value);">
+                    <option value="">~~SELECT~~</option>
+                    <?php 
+                    $sql = "SELECT brand_id, brand_name, brand_active, brand_status FROM brands WHERE brand_status = 1 AND brand_active = 1";
+                            $result = $connect->query($sql);
+
+                            while($row = $result->fetch_array()) {
+                                echo "<option value='".$row[0]."'>".$row[1]."</option>";
+                            } // while
+
+                    ?>
+                  </select>
 			    </div>
 			  </div> <!--/form-group-->
 			  <div class="form-group"> <!--Client Contact-->
 			    <label for="clientContact" class="col-sm-2 control-label">To Droppoint</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="toDroppoint" name="toDroppoint" placeholder="To Droppoint" autocomplete="off" />
+			      <select class="form-control" id="DroppointName" name="DroppointName">
+			      <option value="">~~SELECT~~</option>
+                    <?php 
+                    $sql = "SELECT droppoint_id, droppoint_name, droppoint_active FROM droppoint WHERE droppoint_active = 1";
+                            $result = $connect->query($sql);
+
+                            while($row = $result->fetch_array()) {
+                                echo "<option value='".$row[0]."'>".$row[1]."</option>";
+                            } // while
+
+                    ?>
+				  </select>
 			    </div>
 			  </div> <!--/form-group-->			  
+		  
 
 			  <table class="table" id="productTable">
 			  	<thead>
 			  		<tr>			  			
 			  			<th style="width:40%;">Product</th>
-			  			<th style="width:20%;">Rate</th>
+			  			<th style="width:20%;">Avaliable</th>
 			  			<th style="width:15%;">Quantity</th>			  			
-			  			<th style="width:15%;">Total</th>			  			
+<!--			  			<th style="width:15%;">Total</th>			  			-->
 			  			<th style="width:10%;"></th>
 			  		</tr>
 			  	</thead>
@@ -115,16 +126,7 @@ if($_GET['o'] == 'add') {
 			  					<div class="form-group">
 
 			  					<select class="form-control" name="productName[]" id="productName<?php echo $x; ?>" onchange="getProductData(<?php echo $x; ?>)" >
-			  						<option value="">~~SELECT~~</option>
-			  						<?php
-			  							$productSql = "SELECT * FROM product WHERE active = 1 AND status = 1 AND quantity != 0";
-			  							$productData = $connect->query($productSql);
-
-			  							while($row = $productData->fetch_array()) {									 		
-			  								echo "<option value='".$row['product_id']."' id='changeProduct".$row['product_id']."'>".$row['product_name']."</option>";
-										 	} // /while 
-
-			  						?>
+			  						
 		  						</select>
 			  					</div>
 			  				</td>
@@ -153,80 +155,7 @@ if($_GET['o'] == 'add') {
 			  	</tbody>			  	
 			  </table>
 
-			  <div class="col-md-6">
-			  	<div class="form-group">
-				    <label for="subTotal" class="col-sm-3 control-label">Sub Amount</label>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="subTotal" name="subTotal" disabled="true" />
-				      <input type="hidden" class="form-control" id="subTotalValue" name="subTotalValue" />
-				    </div>
-				  </div> <!--/form-group-->			  
-				  <div class="form-group">
-				    <label for="vat" class="col-sm-3 control-label">VAT 13%</label>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="vat" name="vat" disabled="true" />
-				      <input type="hidden" class="form-control" id="vatValue" name="vatValue" />
-				    </div>
-				  </div> <!--/form-group-->			  
-				  <div class="form-group">
-				    <label for="totalAmount" class="col-sm-3 control-label">Total Amount</label>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="totalAmount" name="totalAmount" disabled="true"/>
-				      <input type="hidden" class="form-control" id="totalAmountValue" name="totalAmountValue" />
-				    </div>
-				  </div> <!--/form-group-->			  
-				  <div class="form-group">
-				    <label for="discount" class="col-sm-3 control-label">Discount</label>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" />
-				    </div>
-				  </div> <!--/form-group-->	
-				  <div class="form-group">
-				    <label for="grandTotal" class="col-sm-3 control-label">Grand Total</label>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="grandTotal" name="grandTotal" disabled="true" />
-				      <input type="hidden" class="form-control" id="grandTotalValue" name="grandTotalValue" />
-				    </div>
-				  </div> <!--/form-group-->			  		  
-			  </div> <!--/col-md-6-->
-
-			  <div class="col-md-6">
-			  	<div class="form-group">
-				    <label for="paid" class="col-sm-3 control-label">Paid Amount</label>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="paid" name="paid" autocomplete="off" onkeyup="paidAmount()" />
-				    </div>
-				  </div> <!--/form-group-->			  
-				  <div class="form-group">
-				    <label for="due" class="col-sm-3 control-label">Due Amount</label>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="due" name="due" disabled="true" />
-				      <input type="hidden" class="form-control" id="dueValue" name="dueValue" />
-				    </div>
-				  </div> <!--/form-group-->		
-				  <div class="form-group">
-				    <label for="clientContact" class="col-sm-3 control-label">Payment Type</label>
-				    <div class="col-sm-9">
-				      <select class="form-control" name="paymentType" id="paymentType">
-				      	<option value="">~~SELECT~~</option>
-				      	<option value="1">Cheque</option>
-				      	<option value="2">Cash</option>
-				      	<option value="3">Credit Card</option>
-				      </select>
-				    </div>
-				  </div> <!--/form-group-->							  
-				  <div class="form-group">
-				    <label for="clientContact" class="col-sm-3 control-label">Payment Status</label>
-				    <div class="col-sm-9">
-				      <select class="form-control" name="paymentStatus" id="paymentStatus">
-				      	<option value="">~~SELECT~~</option>
-				      	<option value="1">Full Payment</option>
-				      	<option value="2">Advance Payment</option>
-				      	<option value="3">No Payment</option>
-				      </select>
-				    </div>
-				  </div> <!--/form-group-->							  
-			  </div> <!--/col-md-6-->
+			  
 
 
 			  <div class="form-group submitButtonFooter">
